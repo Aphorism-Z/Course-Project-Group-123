@@ -7,6 +7,16 @@
 
 **Alexander** will focus on the project overview and research questions. Guide the analysis, help create visualizations, and summarize the findings. 
 
+## Datasets:
+We will be using 3 datasets from World Bank’s archives to answer our research questions:
+
+•	GDP (Current US$): GDP is the total amount of income earned through the production of goods and services in an economic territory during an accounting period. This dataset measures the total size of each country’s economy in US dollars, from 1960 onward.
+
+•	Access to electricity (% of population): This gives the share of each country’s population with electricity access, with data starting around 1990.
+
+•	Life expectancy at birth, total (years): This gives the average number of years a newborn (male or female) is expected to live, from 1960 onward.
+
+These datasets were all most recently updated on Oct. 8 of this year, so the data is quite up to date. All of the datasets go up to the year 2024 or 2025, so we can get a pretty accurate and modern measure of all the data we will be using. Each dataset contributes a different but related piece of information: economic output, infrastructure/living conditions, and health quality. Together they will allow us to examine how wealth, electricity access, and life expectancy are connected (our 3 sub-questions). In terms of how they can be integrated, all three files share the same structure and identifiers. Each row is a country or region, identified by the columns Country Name and Country Code, and each following column for data is a year. We can link these datasets by matching on Country Code and year. 
 
 ## Timeline: 
 
@@ -29,6 +39,9 @@
 **December 6**: Review the results, documentation, file links, and each member’s contributions. Check the project against the final submission checklist and confirm that running the workflow produces the reported results. Responsible: All members 
 
 **December 8**: Commit to GitHub, submit URL. 
+
+## Constraints:
+After looking at our datasets, we identified some possible setbacks. One downside with this data is that, unlike life expectancy, electricity access data starts for most countries at 1990 rather than 1960. These empty values could be explained by some sort of data collection limit (for instance, World Bank might have only started collecting this type of data starting at 1990), but it’s something to keep in mind as we continue our research. GDP is also missing some data in the early years for countries such as Afghanistan, Armenia, and Curacao, which should also be addressed. In terms of data usage, all 3 of the datasets operate under CC BY-4.0, meaning that the data can be copied, modified, and distributed in any format for any purpose, as long as notification of any changes and credit are given. 
 
 ## Gaps: 
 We still need to select the years to include in our analysis. Although the three datasets have year columns, some countries may not have data for all three indicators in the same years. We will compare their coverage before selecting the study period. 
