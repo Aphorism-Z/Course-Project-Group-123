@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pandas as pd
 
-folder = Path(__file__).resolve().parent[1] / "data" / "cleaned"
+folder = Path(__file__).resolve().parents[1] / "data" / "cleaned"
 keys = ["Country Code", "Year"]
 
 gdp = pd.read_csv(folder / "gdp_long.csv")
