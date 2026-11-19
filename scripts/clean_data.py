@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pandas as pd
 
-folder = Path(__file__).resolve().parent[1]
+folder = Path(__file__).resolve().parents[1]
 output_dir = folder / "data" / "cleaned"
 output_dir.mkdir(parents=True, exist_ok=True)
 
