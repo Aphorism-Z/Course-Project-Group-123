@@ -1,0 +1,267 @@
+Country Code,Country Name,missing_years
+ABW,Aruba,31
+AFE,Africa Eastern and Southern,41
+AFG,Afghanistan,41
+AFW,Africa Western and Central,34
+AGO,Angola,41
+ALB,Albania,31
+AND,Andorra,31
+ARB,Arab World,38
+ARE,United Arab Emirates,31
+ARG,Argentina,31
+ARM,Armenia,41
+ASM,American Samoa,66
+ATG,Antigua and Barbuda,31
+AUS,Australia,31
+AUT,Austria,31
+AZE,Azerbaijan,40
+BDI,Burundi,39
+BEL,Belgium,31
+BEN,Benin,37
+BFA,Burkina Faso,34
+BGD,Bangladesh,32
+BGR,Bulgaria,31
+BHR,Bahrain,31
+BHS,"Bahamas, The",31
+BIH,Bosnia and Herzegovina,31
+BLR,Belarus,31
+BLZ,Belize,32
+BMU,Bermuda,31
+BOL,Bolivia,33
+BRA,Brazil,31
+BRB,Barbados,31
+BRN,Brunei Darussalam,31
+BTN,Bhutan,41
+BWA,Botswana,32
+CAF,Central African Republic,36
+CAN,Canada,31
+CEB,Central Europe and the Baltics,31
+CHE,Switzerland,31
+CHI,Channel Islands,31
+CHL,Chile,31
+CHN,China,41
+CIV,Cote d'Ivoire,35
+CMR,Cameroon,32
+COD,"Congo, Dem. Rep.",41
+COG,"Congo, Rep.",41
+COL,Colombia,31
+COM,Comoros,37
+CPV,Cabo Verde,41
+CRI,Costa Rica,41
+CSS,Caribbean small states,41
+CUB,Cuba,41
+CUW,Curacao,31
+CYM,Cayman Islands,31
+CYP,Cyprus,31
+CZE,Czechia,31
+DEU,Germany,31
+DJI,Djibouti,37
+DMA,Dominica,39
+DNK,Denmark,31
+DOM,Dominican Republic,32
+DZA,Algeria,41
+EAP,East Asia & Pacific (excluding high income),41
+EAR,Early-demographic dividend,34
+EAS,East Asia & Pacific,41
+ECA,Europe & Central Asia (excluding high income),41
+ECS,Europe & Central Asia,31
+ECU,Ecuador,36
+EGY,"Egypt, Arab Rep.",33
+EMU,Euro area,31
+ERI,Eritrea,36
+ESP,Spain,31
+EST,Estonia,31
+ETH,Ethiopia,41
+EUU,European Union,31
+FCV,"Fragility, Conflict, and Violence (FCV) situations",41
+FIN,Finland,31
+FJI,Fiji,37
+FRA,France,31
+FRO,Faroe Islands,31
+FSM,"Micronesia, Fed. Sts.",41
+GAB,Gabon,41
+GBR,United Kingdom,31
+GEO,Georgia,41
+GHA,Ghana,34
+GIB,Gibraltar,31
+GIN,Guinea,40
+GMB,"Gambia, The",34
+GNB,Guinea-Bissau,43
+GNQ,Equatorial Guinea,41
+GRC,Greece,31
+GRD,Grenada,39
+GRL,Greenland,31
+GTM,Guatemala,36
+GUM,Guam,31
+GUY,Guyana,34
+HIC,High income,31
+HKG,"Hong Kong SAR, China",31
+HND,Honduras,32
+HPC,Heavily indebted poor countries (HIPC),41
+HRV,Croatia,31
+HTI,Haiti,36
+HUN,Hungary,31
+IBD,IBRD only,41
+IBT,IDA & IBRD total,41
+IDA,IDA total,39
+IDB,IDA blend,39
+IDN,Indonesia,32
+IDX,IDA only,41
+IMN,Isle of Man,31
+IND,India,34
+INX,Not classified,66
+IRL,Ireland,31
+IRN,"Iran, Islamic Rep.",41
+IRQ,Iraq,41
+ISL,Iceland,31
+ISR,Israel,31
+ITA,Italy,31
+JAM,Jamaica,31
+JOR,Jordan,31
+JPN,Japan,31
+KAZ,Kazakhstan,36
+KEN,Kenya,34
+KGZ,Kyrgyz Republic,38
+KHM,Cambodia,39
+KIR,Kiribati,41
+KNA,St. Kitts and Nevis,31
+KOR,"Korea, Rep.",31
+KWT,Kuwait,31
+LAC,Latin America & Caribbean (excluding high income),33
+LAO,Lao PDR,34
+LBN,Lebanon,41
+LBR,Liberia,48
+LBY,Libya,41
+LCA,St. Lucia,41
+LCN,Latin America & Caribbean,33
+LDC,Least developed countries: UN classification,41
+LIC,Low income,41
+LIE,Liechtenstein,31
+LKA,Sri Lanka,41
+LMC,Lower middle income,34
+LMY,Low & middle income,41
+LSO,Lesotho,41
+LTE,Late-demographic dividend,41
+LTU,Lithuania,31
+LUX,Luxembourg,31
+LVA,Latvia,31
+MAC,"Macao SAR, China",31
+MAF,St. Martin (French part),31
+MAR,Morocco,33
+MCO,Monaco,31
+MDA,Moldova,31
+MDG,Madagascar,33
+MDV,Maldives,41
+MEA,"Middle East, North Africa, Afghanistan & Pakistan",41
+MEX,Mexico,33
+MHL,Marshall Islands,40
+MIC,Middle income,41
+MKD,North Macedonia,31
+MLI,Mali,37
+MLT,Malta,31
+MMR,Myanmar,41
+MNA,"Middle East, North Africa, Afghanistan & Pakistan (excluding high income)",41
+MNE,Montenegro,31
+MNG,Mongolia,41
+MNP,Northern Mariana Islands,31
+MOZ,Mozambique,38
+MRT,Mauritania,41
+MUS,Mauritius,31
+MWI,Malawi,33
+MYS,Malaysia,41
+NAC,North America,31
+NAM,Namibia,33
+NCL,New Caledonia,31
+NER,Niger,33
+NGA,Nigeria,31
+NIC,Nicaragua,34
+NLD,Netherlands,31
+NOR,Norway,31
+NPL,Nepal,37
+NRU,Naoero,31
+NZL,New Zealand,31
+OED,OECD members,31
+OMN,Oman,31
+OSS,Other small states,41
+PAK,Pakistan,39
+PAN,Panama,31
+PER,Peru,33
+PHL,Philippines,34
+PLW,Palau,31
+PNG,Papua New Guinea,37
+POL,Poland,31
+PRE,Pre-demographic dividend,38
+PRI,Puerto Rico (US),31
+PRK,"Korea, Dem. People's Rep.",50
+PRT,Portugal,31
+PRY,Paraguay,36
+PSE,West Bank and Gaza,38
+PSS,Pacific island small states,40
+PST,Post-demographic dividend,31
+PYF,French Polynesia,31
+QAT,Qatar,31
+ROU,Romania,31
+RUS,Russian Federation,31
+RWA,Rwanda,37
+SAS,South Asia,34
+SAU,Saudi Arabia,31
+SDN,Sudan,31
+SEN,Senegal,34
+SGP,Singapore,31
+SLB,Solomon Islands,40
+SLE,Sierra Leone,41
+SLV,El Salvador,32
+SMR,San Marino,31
+SOM,"Somalia, Fed. Rep.",41
+SRB,Serbia,31
+SSA,Sub-Saharan Africa (excluding high income),37
+SSD,South Sudan,48
+SSF,Sub-Saharan Africa,37
+SST,Small states,40
+STP,Sao Tome and Principe,41
+SUR,Suriname,40
+SVK,Slovak Republic,31
+SVN,Slovenia,31
+SWE,Sweden,31
+SWZ,Eswatini,41
+SXM,Sint Maarten (Dutch part),31
+SYC,Seychelles,35
+SYR,Syrian Arab Republic,41
+TCA,Turks and Caicos Islands,31
+TCD,Chad,38
+TEA,East Asia & Pacific (IDA & IBRD countries),41
+TEC,Europe & Central Asia (IDA & IBRD countries),31
+TGO,Togo,39
+THA,Thailand,41
+TJK,Tajikistan,40
+TKM,Turkmenistan,41
+TLA,Latin America & the Caribbean (IDA & IBRD countries),33
+TLS,Timor-Leste,41
+TMN,"Middle East, North Africa, Afghanistan & Pakistan (IDA & IBRD)",41
+TON,Tonga,35
+TSA,South Asia (IDA & IBRD),34
+TSS,Sub-Saharan Africa (IDA & IBRD countries),37
+TTO,Trinidad and Tobago,41
+TUN,Tunisia,35
+TUR,Turkiye,41
+TUV,Tuvalu,41
+TZA,Tanzania,33
+UGA,Uganda,34
+UKR,Ukraine,31
+UMC,Upper middle income,41
+URY,Uruguay,33
+USA,United States,31
+UZB,Uzbekistan,37
+VCT,St. Vincent and the Grenadines,32
+VEN,"Venezuela, RB",33
+VGB,British Virgin Islands,31
+VIR,Virgin Islands (U.S.),31
+VNM,Viet Nam,38
+VUT,Vanuatu,35
+WLD,World,39
+WSM,Samoa,32
+XKX,Kosovo,56
+YEM,"Yemen, Rep.",33
+ZAF,South Africa,37
+ZMB,Zambia,31
+ZWE,Zimbabwe,33
