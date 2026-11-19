@@ -22,6 +22,7 @@ def long_format(df,name):
                   var_name = "year", value_name = name)
     out['year'] = out['year'].astype(int)
     return out.dropna(subset=[name])
+
 def assess_completeness(name,df):
     years = year_columns(df)
     missing = df[years].isna()
@@ -29,7 +30,7 @@ def assess_completeness(name,df):
     per_year.rename("missing_share").rename_axis("year").to_csv(results / f"missing_by_year_{name}.csv")
     empty_years = per_year[per_year == 1].index.tolist()
     nodata = df.loc[missing.all(axis=1), ["Country Code", "Country Name"]]
-    
+
     df.assign(missing_years=missing.sum(axis=1))[["Country Code", "Country Name", "missing_years"]] \
       .to_csv(results / f"missing_by_record_{name}.csv", index=False)
 
@@ -44,6 +45,7 @@ def assess_completeness(name,df):
         lines.append(" -" + ", ".join(nodata["Country Name"]))
     lines.append("")
     return lines
+
 def assess_timeliness(name,df):
     years = year_columns(df)
     hasdata = df[years].notna()
@@ -57,6 +59,7 @@ def assess_timeliness(name,df):
         f"- Records w data in past 3 yrs: {last3}",
         "",
     ]
+
 def assess_consistency(data):
     codes = {n: set(d["Country Code"]) for n, d in data.items()}
     same_codes = len({frozenset(s) for s in codes.values()}) == 1
@@ -74,6 +77,7 @@ def assess_consistency(data):
         f"- Country names that differ from the GDP file: {name_diffs}",
         "",
     ]
+
 def main():
     results.mkdir(exist_ok=True)
     data = {name: load(name) for name in files}
