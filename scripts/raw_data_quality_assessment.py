@@ -29,7 +29,7 @@ def assess_completeness(name,df):
     per_year.rename("missing_share").rename_axis("year").to_csv(results / f"missing_by_year_{name}.csv")
     empty_years = per_year[per_year == 1].index.tolist()
     nodata = df.loc[missing.all(axis=1), ["Country Code", "Country Name"]]
-    nodata.to_csv(results / f"nodata_records_{name}.csv", index=False)
+    
     df.assign(missing_years=missing.sum(axis=1))[["Country Code", "Country Name", "missing_years"]] \
       .to_csv(results / f"missing_by_record_{name}.csv", index=False)
 
@@ -44,6 +44,36 @@ def assess_completeness(name,df):
         lines.append(" -" + ", ".join(nodata["Country Name"]))
     lines.append("")
     return lines
+def assess_timeliness(name,df):
+    years = year_columns(df)
+    hasdata = df[years].notna()
+    populated = [int(y) for y in years if hasdata[y].any()]
+    release = pd.read_excel(raw / files[name]).iloc[2,1]
+    last3 = hasdata[years[-3:]].sum().to_dict()
+    return [
+        f"{name}: timeliness", "",
+        f"- Release date: {release}",
+        f"- First / Last year data shown: {min(populated)} / {max(populated)}",
+        f"- Records w data in past 3 yrs: {last3}",
+        "",
+    ]
+def assess_consistency(data):
+    codes = {n: set(d["Country Code"]) for n, d in data.items()}
+    same_codes = len({frozenset(s) for s in codes.values()}) == 1
+    dupes = {n: int(d["Country Code"].duplicated().sum()) for n, d in data.items()}
+    base = data["gdp"][["Country Code", "Country Name"]]
+    name_diffs = {}
+    for n in ("life_exp", "elec"):
+        m = base.merge(data[n][["Country Code", "Country Name"]], on="Country Code", suffixes = ("", "_other"))
+        name_diffs[n] = int((m["Country Name"] != m["Country Name_other"]).sum())
+    base.to_csv(results / "records_for_agg_review.csv", index=False)
+    return [
+        "CONSISTENCY ACROSS DATASETS", "",
+        f"- Same set of country codes in all files: {same_codes}",
+        f"- Dupe country codes per file: {dupes}",
+        f"- Country names that differ from the GDP file: {name_diffs}",
+        "",
+    ]
 def main():
     results.mkdir(exist_ok=True)
     data = {name: load(name) for name in files}
@@ -51,6 +81,8 @@ def main():
     for name, df in data.items():
         print(name, df.shape, df.columns[:6].tolist(), year_columns(df)[:10])
         report += assess_completeness(name,df)
+        report += assess_timeliness(name,df)
+        report += assess_consistency(data)
     (results / "quality_report_raw.md").write_text("\n".join(report), encoding="utf-8")
 if __name__ == "__main__":
     main()
