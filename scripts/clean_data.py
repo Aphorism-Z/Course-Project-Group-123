@@ -9,6 +9,7 @@ output_dir.mkdir(parents=True, exist_ok=True)
 datasets = [
     ("API_NY.GDP.MKTP.CD_DS2_en_csv_v2_512.xlsx", "GDP", "gdp_long.csv"),
     ("API_SP.DYN.LE00.IN_DS2_en_csv_v2_1528.xlsx", "LifeExpectancy", "life_expectancy_long.csv"),
+    ("API_EG.ELC.ACCS.ZS_DS2_en_csv_v2_987.xlsx", "ElectricityAccess", "electricity_access_long.csv"),
 ]
 
 for filename, indicator, output_name in datasets:
