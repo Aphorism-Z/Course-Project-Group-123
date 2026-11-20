@@ -20,6 +20,12 @@ CONSISTENCY ACROSS DATASETS
 - Dupe country codes per file: {'gdp': 0, 'life_exp': 0, 'elec': 0}
 - Country names that differ from the GDP file: {'life_exp': 0, 'elec': 0}
 
+- gdp: accuracy
+
+- Lowest value: 2585955.87411804 (Tuvalu, 1970)
+- Highest value: 118350166039396.0 (World, 2025)
+- Yearly changes above 50%: 194
+
 life_exp: completeness
 
 - Records: 266, year columns: 66
@@ -40,6 +46,12 @@ CONSISTENCY ACROSS DATASETS
 - Dupe country codes per file: {'gdp': 0, 'life_exp': 0, 'elec': 0}
 - Country names that differ from the GDP file: {'life_exp': 0, 'elec': 0}
 
+- life_exp: accuracy
+
+- Lowest value: 10.989 (South Sudan, 1988)
+- Highest value: 86.497 (Monaco, 2024)
+- Yearly changes above 50%: 16
+
 elec: completeness
 
 - Records: 266, year columns: 66
@@ -59,3 +71,9 @@ CONSISTENCY ACROSS DATASETS
 - Same set of country codes in all files: True
 - Dupe country codes per file: {'gdp': 0, 'life_exp': 0, 'elec': 0}
 - Country names that differ from the GDP file: {'life_exp': 0, 'elec': 0}
+
+- elec: accuracy
+
+- Lowest value: 0.533898532390594 (Uganda, 1994)
+- Highest value: 100.0 (Aruba, 1990)
+- Yearly changes above 50%: 58

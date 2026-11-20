@@ -18,7 +18,7 @@ def load(name):
 def year_columns(df):
     return [c for c in df.columns if c.isdigit()]
 def long_format(df,name):
-    out = df.melt(id_vars = ["Country Code, Country Name"], value_vars=year_columns(df),
+    out = df.melt(id_vars = ["Country Code", "Country Name"], value_vars=year_columns(df),
                   var_name = "year", value_name = name)
     out['year'] = out['year'].astype(int)
     return out.dropna(subset=[name])
@@ -78,6 +78,24 @@ def assess_consistency(data):
         "",
     ]
 
+rules = {
+    "gdp": lambda v: v <= 0,
+    "life_exp": lambda v: (v < 20) | (v > 90),
+    "elec": lambda v: (v < 0) | (v > 100),
+}
+def assess_accuracy(name, df):
+    long = long_format(df, name).sort_values(["Country Code", "year"])
+    low, high = long.loc[long[name].idxmin()], long.loc[long[name].idxmax()]
+    long["pct_change"] = long.groupby("Country Code")[name].pct_change()
+    jumps = long[long["pct_change"].abs() > 0.5]
+    jumps.to_csv(results / f"large_jumps_{name}.csv", index=False)
+    return [
+        f"- {name}: accuracy", "",
+        f"- Lowest value: {low[name]} ({low['Country Name']}, {low['year']})",
+        f"- Highest value: {high[name]} ({high['Country Name']}, {high['year']})",
+        f"- Yearly changes above 50%: {len(jumps)}",
+        "",
+    ]
 def main():
     results.mkdir(exist_ok=True)
     data = {name: load(name) for name in files}
@@ -87,6 +105,7 @@ def main():
         report += assess_completeness(name,df)
         report += assess_timeliness(name,df)
         report += assess_consistency(data)
+        report += assess_accuracy(name,df)
     (results / "quality_report_raw.md").write_text("\n".join(report), encoding="utf-8")
 if __name__ == "__main__":
     main()
