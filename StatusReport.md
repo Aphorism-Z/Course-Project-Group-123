@@ -1,6 +1,13 @@
 # Milestone 3 Status Report
 
 ## Task Updates
+### Raw Data Organization and Documentation
+
+Owen organized the three original World Bank Excel workbooks in [data/raw](data/raw/). The files contain GDP in current US dollars, access to electricity as a percentage of the population, and life expectancy at birth in years. The repository includes [indicator and source documentation](docs/DATA_SOURCES.md), a [data license document](DATA_LICENSE.md), and a [SHA-256 checksum list](data/raw/CHECKSUMS.sha256).
+
+### Raw Data Quality Assessment
+
+Owen completed the initial quality assessment of the three source files. Each workbook contains 266 reporting entities and 66 year columns. Across those columns, 15.6% of GDP values, 53.7% of electricity access values, and 2.1% of life expectancy values are missing. The workbooks contain the same set of country codes. The assessment found no duplicate codes within a workbook and no differences in the names associated with those codes across workbooks. The assessment also flagged large year-to-year changes for review. The methods and findings are available in the [assessment script](scripts/raw_data_quality_assessment.py) and the [raw data quality report](results/quality_report_raw.md).
 ### Initial Data Cleaning and Integration
 
 I reshaped the three World Bank datasets into long format so that each row represents one reporting entity in one year. The intermediate files are [GDP](data/cleaned/gdp_long.csv), [electricity access](data/cleaned/electricity_access_long.csv), and [life expectancy](data/cleaned/life_expectancy_long.csv).
@@ -9,12 +16,33 @@ I merged the three tables using `Country Code` and `Year` and saved the result a
 
 The [cleaning script](scripts/clean_data.py) converts the three Excel files into long-format tables, and the [integration script](scripts/integrate_data.py) merges them by `Country Code` and `Year`.
 
+### Post-Integration Assessment
+
+We completed the initial checks on the integrated dataset. We checked the country-year keys for missing values and duplicates and compared the merged indicator values with the three intermediate tables. Of the 17,556 rows in the integrated dataset, 7,817 contain all three indicators. The count of 7,817 is based on the full merged table, which still includes regional and income-group aggregates. The country-level sample and the final analysis period still need to be determined.
+
 ## Updated Timeline
 
+- **October 22 — Initial project plan (all members).** Completed. The initial plan is available in the [project-plan release](https://github.com/Aphorism-Z/Course-Project-Group-123/releases/tag/project-plan).
+- **October 29 — Raw data organization (Owen).** Completed. The original workbooks, source documentation, license information, and checksum list were pushed to GitHub on November 18.
+- **November 5 — Raw data quality assessment (Owen).** The initial assessment of all three workbooks and its results were committed by November 19.
+- **November 12 — Initial cleaning and integration (Xingyi).** Completed on November 19. The repository contains the two processing scripts, the three long-format tables, and the integrated dataset.
+- **November 17 — Integrated data assessment (Xingyi and Alexander).** In progress. We completed the initial merge checks. The review of aggregate rows and year coverage is pending. The proposed target is November 30.
+- **November 19 — Milestone 3 status report (all members).** Finalize the report and project plan update, commit individual contribution summaries, and publish the `status-report` release.
+- **November 26 — Analysis, visualizations, and workflow (Xingyi and Alexander).** The proposed target is December 3, after Thanksgiving break. Complete the initial analysis and figures, connect the scripts, and document the software dependencies.
+- **December 2 — Documentation and workflow testing (all members).** The proposed target is December 5. Finish the data dictionary, metadata, and final README, then test the workflow from a fresh copy of the repository.
+- **December 6 — Final review (all members).** Review the report, results, repository links, and contributions.
+- **December 8 — Final submission (all members).** Publish the final release and submit its URL.
+
 ## Changes to the Project Plan
+The original plan targeted November 12 for initial cleaning and integration. We completed that work on November 19. We have verified the structure and values of the merged dataset. The remaining work is to define the sample for analysis, including how to identify aggregate rows and choose a period with adequate coverage across all three indicators.
 
+The proposed timeline places the remaining data checks and initial analysis after Thanksgiving break. Reviewing the analysis sample first will allow us to report which entities and years the comparisons represent.
 ## Challenges and Next Steps
+**Uneven coverage across indicators.** GDP has reported values from 1960 through 2025, life expectancy from 1960 through 2024, and electricity access from 1990 through 2024. Coverage varies by reporting entity within those ranges. We preserved missing values during cleaning and integration. We propose 1990–2024 as a candidate period, subject to a review of country-level coverage. Before choosing the final years, we will count how many countries have values for all three indicators in each year. The [raw data quality report](results/quality_report_raw.md) documents these differences in coverage.
 
+**Country and aggregate records appear together.** The source files contain records for individual countries as well as regions, income groups, and the world total. We kept these records in the integrated table. Before comparing countries, we will review the World Bank metadata to identify the aggregate codes. The [aggregate review file](results/records_for_agg_review.csv) provides a starting point.
+
+**Large changes need context.** The assessment script flagged unusually large year-to-year changes. A flagged change may reflect a real event. Before excluding any flagged values, we will review those that could materially affect the analysis and document the basis for any exclusion. The flags are available for [GDP](results/large_jumps_gdp.csv), [electricity access](results/large_jumps_elec.csv), and [life expectancy](results/large_jumps_life_exp.csv).
 ## Individual Contributions
 
 ### Xingyi Wang
