@@ -18,7 +18,9 @@ The [cleaning script](scripts/clean_data.py) converts the three Excel files into
 
 ### Post-Integration Assessment
 
-We completed the initial checks on the integrated dataset. We checked the country-year keys for missing values and duplicates and compared the merged indicator values with the three intermediate tables. Of the 17,556 rows in the integrated dataset, 7,817 contain all three indicators. The count of 7,817 is based on the full merged table, which still includes regional and income-group aggregates. The country-level sample and the final analysis period still need to be determined.
+The [post-integration audit script](scripts/data_quality_assessment.py) produces a [quality report](results/quality_report_integrated.md) with coverage and missing-value counts. For accuracy, the script compares the integrated values against the cleaned input tables using country code and year. It found no missing keys or value mismatches, including when checking whether missing values stayed missing. All observed values also passed basic range checks for GDP, electricity access, and life expectancy. For consistency, the script found zero exact duplicate rows, duplicate country-year keys, missing key values, or country codes with conflicting names. Together, these results show that the integration preserved the observations from the cleaned input tables.
+
+For completeness, all 266 reporting entities and 66 year labels from 1960 through 2025 survived the outer join. They include countries, territories, and aggregates. Of 17,556 integrated rows, 7,817 (44.5%) have all three values, covering 260 entities. Electricity access has the highest missing share at 53.7%, followed by GDP at 15.6% and life expectancy at 2.1%. For timeliness, the workbooks were updated on October 8, 2026. The latest year with all three indicators is 2024, which has 247 complete rows. The 2025 rows contain 234 GDP values and no observations for the other two indicators.
 
 ## Updated Timeline
 
