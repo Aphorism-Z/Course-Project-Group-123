@@ -20,5 +20,5 @@ The [cleaning script](scripts/clean_data.py) converts the three Excel files into
 ### Xingyi Wang
 For this milestone, I converted the three World Bank datasets into long format, joined them by country code and year, and added the three intermediate tables and the integrated dataset to the repository.
 ### Owen Rives
-
+For this milestone, I organized the raw World Bank files and documented their sources, indicator definitions and licenses, recorded SHA-256 checksums, wrote a script that tests the raw data's accuracy, completeness, timeliness, and consistency, and added the quality report and my manual spot-check notes to the repository.
 ### Alexander Zhao
