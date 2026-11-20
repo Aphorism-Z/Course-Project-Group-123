@@ -52,4 +52,4 @@ For this milestone, I converted the three World Bank datasets into long format, 
 ### Owen Rives
 For this milestone, I organized the raw World Bank files and documented their sources, indicator definitions and licenses, recorded SHA-256 checksums, wrote a script that tests the raw data's accuracy, completeness, timeliness, and consistency, and added the quality report and my manual spot-check notes to the repository.
 ### Alexander Zhao
-For this milestone, I worked on the post-integration data quality assessment. I checked the country-year keys and duplicate records, compared the merged values with the three cleaned input tables, and summarized missing values and coverage by year and reporting entity.
+For this milestone, I worked on the post-integration data quality assessment. I checked accuracy, completeness, etc again for the integrated data. A final data quality assessment file is added as well.
